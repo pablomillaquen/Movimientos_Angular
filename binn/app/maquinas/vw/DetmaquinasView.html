@@ -1,0 +1,356 @@
+<menu-dir></menu-dir>
+<div id="page-wrapper" print-section>
+    <toast></toast>
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="titulo">
+                <section>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3>PERFIL DE MÁQUINA O CAMIÓN</h3>
+                        </div>
+                        <!--Inicio Botón dropdown-->
+                        <div class="col-xs-6 text-right">
+                            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true" print-remove>
+                                <ul class="nav navbar-nav">
+                                    <li uib-dropdown>
+                                        <button class="btn btn-default" ng-controller="DropdownCtrl" uib-dropdown-toggle>
+                                            <span class="glyphicon caret"></span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                        </button>
+                                        <!--inicio: SUB MENU -->
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a ng-click="openHistModif()"> Histórico de Modificaciones </a></li>
+                                            <li><a ng-click="openHistReports()"><i class=""></i>Histórico de Reports </a></li>
+                                            <li><a ng-click="openHistOperarios()"><i class=""></i>Histórico de Operarios</a></li>
+                                        </ul>
+                                        <!--fin: SUB MENU -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Fin div class="col-xs-6 text-right"-->
+                        <!--Fin Botón dropdown-->
+                        <!--Inicio sección Perfil y otros-->
+                        <div class="col-lg-8">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <form name="frmDatos" id="frmDatos" method="post" class="form-horizontal" novalidate>
+                                            <!--div class="form-group">
+                                                <!--label class="col-md-2 control-label labelForm">Tipo: </label>
+                                                <div class="col-md-4">
+                                                    
+                                                    <para-Dir idp="9" nomobj="TipoMaquina" val="{{maquina.tipoMaquina}}"></para-Dir>
+                                                    <select name="TipoMaquina" id="TipoMaquina" ng-model="maquina.tipoMaquina" class="form-control">
+                                                      <option ng-repeat="option in selectTipos.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                    </select-->
+                                            <!--select name="TipoMaquina" id="TipoMaquina"
+                                                        ng-options="option.Descrip1 for option in selectTipos.availableOptions track by option.IdDet"
+                                                        ng-model="maquina.tipoMaquina"  class="form-control">
+                                                    </select>
+                                                </div-->
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label labelForm">Código: </label>
+                                                <div class="col-md-4">
+                                                    <div class="input-group">
+                                                        <input name="codMaquina" ng-model="maquina.CodMaquina" type="text" class="form-control InputForm40" placeholder="Código" required>
+                                                        <span class="input-group-btn">
+                                                                <button class="btn btn-danger" ng-click="openBuscarMaquina(maquina.CodMaquina)" type="button" data-toggle="modal" data-target="#modal"><i class="glyphicon glyphicon-search"></i></button>
+                                                            </span>
+                                                    </div>
+                                                </div>
+                                                <label class="col-md-2 control-label labelForm">Patente: </label>
+                                                <div class="col-md-4">
+                                                    <input ng-model="maquina.patente" class="form-control" type="text" placeholder="Patente">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label labelForm">Tipo Máquina: </label>
+                                                <div class="col-md-4">
+                                                    <select class="form-control" ng-model="maquina.IdTipoMaq">
+                                                        <option ng-repeat="option in selectTipoMaquinas.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                    </select>
+                                                </div>
+                                                <label class="col-md-2 control-label labelForm">Nombre: </label>
+                                                <div class="col-md-4">
+                                                    <select name="NombreMaquina" id="NombreMaquina" ng-model="maquina.NombreMaq" class="form-control"  required>
+                                                        <option ng-repeat="option in selectNombres.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label labelForm">Combustible: </label>
+                                                <div class="col-md-4">
+                                                    <select name="TipoCombustible" id="TipoCombustible" ng-model="maquina.TipoCombustible" class="form-control" >
+                                                        <option ng-repeat="option in selectCombustibles.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                    </select>
+                                                </div>
+                                                <label class="col-md-2 control-label labelForm">Año: </label>
+                                                <div class="col-md-4">
+                                                    <input ng-model="maquina.Ano" class="form-control InputForm42" type="number" placeholder="Año ">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label labelForm">Proveedor: </label>
+                                                <div class="col-md-4">
+                                                    <select class="form-control" ng-model="maquina.idProveedor">
+                                                        <option ng-repeat="option in selectProveedores.availableOptions" value="{{option.IdReg}}">{{option.RazonSocial}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <p></p>
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="col-md-2 control-label labelForm">Marca / Modelo: </label>
+                                                            <div class="col-md-4">
+                                                                <select name="Marca" id="Marca" ng-model="maquina.IdMarca" class="form-control" ng-change="CambiarModelos(maquina.IdMarca)">
+                                                                    <option ng-repeat="option in selectMarcas.availableOptions" value="{{option.IdReg}}">{{option.Nombre}}</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <select name="Modelo" id="Modelo" ng-model="maquina.IdModelo" class="form-control">
+                                                                    <option ng-repeat="option in selectModelos.availableOptions" value="{{option.IdReg}}">{{option.Modelo}}</option>
+                                                                </select>
+                                                            </div>
+                                                            <button ng-click="openNuevoModelo()" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal">Nuevo Registro</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h5>TIPO DE COBRO</h5>
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Kms: </label>
+                                                        <div class="col-md-10">
+                                                            <input ng-model="maquina.tcKmsMin" class="form-control InputForm42" type="number" placeholder="Kms ">
+                                                            <input ng-model="maquina.tcKmsValor" class="form-control InputForm42" type="number" placeholder="Valor por Kms ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Hrs: </label>
+                                                        <div class="col-md-10">
+                                                            <input ng-model="maquina.tcHrsMin" class="form-control InputForm42" type="number" placeholder="Hrs ">
+                                                            <input ng-model="maquina.tcHrsValor" class="form-control InputForm42" type="number" placeholder="Valor por Hrs ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Dias: </label>
+                                                        <div class="col-md-10">
+                                                            <input ng-model="maquina.tcDiaMin" class="form-control InputForm42" type="number" placeholder="Días ">
+                                                            <input ng-model="maquina.tcDiaValor" class="form-control InputForm42" type="number" placeholder="Valor por Días ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h5>CONSUMO - RENDIMIENTO</h5>
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Kms: </label>
+                                                        <div class="col-md-10">
+                                                            <input ng-model="maquina.RenKms" class="form-control InputForm20" type="number" placeholder="Valor/Kms ">
+                                                            <input ng-model="maquina.RenHoras" class="form-control InputForm20" type="number" placeholder="Valor/Hrs ">
+                                                            <input ng-model="maquina.RenDia" class="form-control InputForm20" type="number" placeholder="Valor/días ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12">Corresponde a la cantidad de <b>KMS, HRS, DIAS</b> que deberia rendir la máquina según lts. de Petróleo consumidos</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h5>CONTROL KILOMETRAJE</h5>
+                                            <div class="panel panel-primary">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label class="col-md-4 control-label labelForm">Ingresado al Sistema: </label>
+                                                        <div class="col-md-8">
+                                                            <input ng-model="maquina.KmsInicio" class="form-control InputForm20" type="number" placeholder="Kms ">
+                                                        </div>
+                                                        <label class="col-md-4 control-label labelForm">Actual: </label>
+                                                        <div class="col-md-8">
+                                                            <input ng-model="maquina.KmsActual" class="form-control InputForm20" type="number" placeholder="Kms ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <div class="btn-group pull-right">
+                                                        <button class="btn btn-primary" ng-click="limpiarMaq()">Limpiar</button>
+                                                        <button ng-disabled="frmDatos.$invalid" class="btn" ng-class="{'btn-default':frmDatos.$invalid, 'btn-danger':frmDatos.$valid}" ng-click="guardarMaq()">Grabar</button>
+                                                        <button ng-disabled="frmDatos.$invalid" class="btn" ng-class="{'btn-default':frmDatos.$invalid, 'btn-info':frmDatos.$valid}" id="btnEliminarMaq" ng-click="EliminarMaq()">Eliminar</button>
+                                                        <button id="btnCerrarComen" ng-click="cerrar()" class="btn btn-primary">Cerrar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin div class="col-lg-8"-->
+                        <!--Fin sección Perfil y otros-->
+                        <!--Inicio sección Mantención-->
+                        <div class="col-lg-4" ng-controller="MaquinaDetMantencionCtrl">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">MANTENCIONES</div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-body">
+                                                <form name="formMant" method="post" class="form-horizontal" novalidate>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label labelForm">Tipo: </label>
+                                                    <div class="col-md-4">
+                                                        
+                                                        <select name="Tipo" id="Tipo" ng-model="mantencion.TipoMantencion" class="form-control" >
+                                                            <option ng-repeat="option in selectTipos.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--Fin div class="col-md-4"-->
+                                                    <div class="col-md-6">
+                                                        <select name="Pieza" id="Pieza" ng-model="mantencion.Pieza" class="form-control" >
+                                                            <option ng-repeat="option in selectPiezas.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--div class="col-md-6"-->
+                                                </div>
+                                                <!--Fin div class="form-group"-->
+                                                <div class="form-group">
+                                                    <p></p>
+                                                    <label class="col-md-2 control-label labelForm">Kms: </label>
+                                                    <div class="col-md-4">
+                                                        <input ng-model="mantencion.ProxMantKms" class="form-control " type="number" placeholder="kms ">
+                                                    </div>
+                                                    <label class="col-md-2 control-label labelForm">Hrs: </label>
+                                                    <div class="col-md-4">
+                                                        <input ng-model="mantencion.ProxMantHrs" class="form-control " type="number" placeholder="Hrs ">
+                                                    </div>
+                                                </div>
+                                                <!--Fin div class="form-group"-->
+                                                <div class="form-group">
+                                                    <p></p>
+                                                    <div class="col-md-2"></div>
+                                                    <button ng-disabled="formMant.$invalid" class="btn" ng-class="{'btn-default':formMant.$invalid, 'btn-danger':formMant.$valid}" ng-click="grabarMantencion()" >Grabar</button>
+                                                </div>
+                                                <!--Fin div class="form-group"-->
+                                                </form>
+                                            </div>
+                                            <!--Fin div class="panel-body"-->
+                                        </div>
+                                        <!--Fin div class="panel panel-danger"-->
+                                    </div>
+                                    <!--Fin div class="col-md-12"-->
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr>
+                                                <th></th>
+                                                <th>Hrs. Mant.</th>
+                                                <th>Kms Mant.</th>
+                                                <th>Parte</th>
+                                                <th>Tipo Mant.</th>
+                                            </tr>
+                                            <tbody>
+                                                <tr ng-repeat="mantencion in mantenciones">
+                                                    <td>
+                                                        <button class="buttonGrilla buttonElimina" ng-click="eliminarMant(mantencion)"></button>
+                                                    </td>
+                                                    <td>{{mantencion.Hrs}}</td>
+                                                    <td>{{mantencion.Kms}}</td>
+                                                    <td>{{mantencion.Parte}}</td>
+                                                    <td>{{mantencion.TipoMant}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--Fin div class="col-md-12"-->
+                                </div>
+                                <!--Fin div class="panel-body"-->
+                            </div>
+                            <!--Fin div class="panel panel-danger"-->
+                        </div>
+                        <!--Fin div class="col-lg-4"-->
+                        <!--Fin sección Mantención-->
+                        <!--Inicio sección Revisión Técnica-->
+                        <div class="col-lg-4" ng-controller="MaquinaDetRevTecnicaCtrl">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">REVISION TECNICA</div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-body">
+                                                <form name="formRV" method="post" class="form-horizontal" novalidate>
+                                                <div class="form-group">
+                                                    <!--  <label class="col-md-3 control-label labelForm">Próxima: </label> -->
+                                                    <div class="input-group col-xs-12">
+                                                        <!--  <div class="btn-group pull-right col-xs-7"> -->
+                                                        <span class="input-group-btn"> 
+
+                                                            <input style="width:50%;" required type="text" class="form-control" uib-datepicker-popup="dd/MM/yyyy" ng-model="fechaRevTecnica" is-open="popup1.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" placeholder="Próxima" />
+                                                            <span class="input-group-btn">
+                                                                <button type="button" class="btn btn-primary" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                                <button ng-disabled="formRV.$invalid" class="btn" ng-class="{'btn-default':formRV.$invalid, 'btn-danger':formRV.$valid}" ng-click="guardarRev()">Grabar</button>
+                                                            </span>
+                                                        </span>
+                                                    </div>
+                                                    <!--  <input ng-model="ano" class="form-control InputForm20" type="text" placeholder="Fecha ">
+                                            <i class="glyphicon glyphicon-calendar"></i> -->
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Fin div class="col-md-12"-->
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr>
+                                                <th></th>
+                                                <th>Fecha Revisión</th>
+                                                <!--th>Revisión Realizada</th>
+                                                <th>Movimiento</a>
+                                                </th-->
+                                            </tr>
+                                            <tbody>
+                                                <tr ng-repeat="revTecnica in revtecnicas">
+                                                    <td>
+                                                        <button class="buttonGrilla buttonElimina" ng-click="eliminarRev(revTecnica)"></button>
+                                                    </td>
+                                                    <td>{{revTecnica.Fecha}}</td>
+                                                    <!--td>
+                                                        <div ng-if="revTecnica.Fecha == null">
+                                                            <button ng-click="actualizaRevTecnica()" class="btn btn-info btn-xs">Realizar</button>
+                                                        </div>
+                                                        <div ng-if="revTecnica.Fecha">
+                                                            {{revTecnica.Fecha}}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div ng-if="revTecnica.Fecha == null">
+                                                            <span class="text-danger">PENDIENTE</span>
+                                                        </div>
+                                                        <div ng-if="revTecnica.Fecha" class="text-center">
+                                                            {{revTecnica.IdReg}}
+                                                        </div>
+                                                    </td-->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--Fin div class="col-md-12"-->
+                                </div>
+                                <!--Fin div class="panel-body"-->
+                            </div>
+                            <!--Fin div class="panel panel-info"-->
+                        </div>
+                        <!--Fin div class="col-lg-4"-->
+                        <!--Fin sección Revisión Técnica-->
+                    </div>
+                    <!--Fin div class="row"-->
+                </section>
+            </section>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<!-- Modal -->
+<!--./HEADER-->
+<div class="modal-header" type="text/ng-template">
+    <button type="button" class="close" ng-click="cerrar()">&times;</button>
+    <h3 class="modal-title">Nuevo Rol</h3>
+</div>
+<!--./BODY-->
+<div class="modal-body">
+    <div class="row">
+    </div>
+    <form name="frmDatos" role="form" class="form-horizontal">
+        <div class="col-xs-10 col-md-10 col-xs-offset-1">
+            <label>Rol</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="rol" ng-model="movimiento.Rol" placeholder="Rol" required>
+                <span class="input-group-btn">
+                    <button ng-click="GrabarRol()" ng-disabled="frmDatos.$invalid" class="btn" ng-class="{'btn-default':frmDatos.$invalid, 'btn-primary':frmDatos.$valid}">Grabar</button>
+                </span>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<!--./FOOTER-->
+<div class="modal-footer">
+    <div class="form-group">
+        <div class="col-md-12">
+            <button class="btn btn-info" ng-click="cerrar()"><i class="glyphicon glyphicon-th-list">  </i> Cancelar</button>
+        </div>
+    </div>
+</div>

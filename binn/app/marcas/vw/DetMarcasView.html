@@ -1,0 +1,135 @@
+<menu-dir></menu-dir>
+<div id="page-wrapper" print-section>
+    <toast></toast>
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="titulo">
+                <section>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3>DETALLE MARCA</h3>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true" print-remove>
+                                <ul class="nav navbar-nav">
+                                    <li uib-dropdown>
+                                        <button class="btn btn-default" ng-controller="DropdownCtrl" uib-dropdown-toggle>
+                                            <span class="glyphicon caret"></span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                        </button>
+                                        <!--inicio: SUB MENU -->
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a ng-click="openHistModif()"> Histórico de Modificaciones </a></li>
+                                            <li><a ng-click="openMaquinasUtilizadas()">Histórico de Máquinas utilizadas</a></li>
+                                        </ul>
+                                        <!--fin: SUB MENU -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSeparaTop">
+                        <!--Inicio sección perfil y contacto de funcionario-->
+                        <div class="col-lg-8">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-xs-12 col-md-12">
+                                        <!-- <div ng-controller="OperadorDetPerfilCtrl"> -->
+                                        <div>
+                                            <form id="frmDatos" method="post" class="form-horizontal">
+                                                <div class="col-xs-12 col-md-12">
+                                                 
+                                                 
+  <!--  
+                                                 <div class="form-group">
+                                                    <label class="col-md-3 control-label labelForm">Marca: </label>
+                                                    <div class="col-md-8">
+                                                        <input class="form-control" type="text"   ng-model="marca.Nombre" placeholder="Nombre" >
+                                                    </div>
+                                                </div>
+
+-->
+                                                 <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Marca: </label>
+                                                        <div class="col-md-1"><input ng-model="marca.IdReg" type="text" class="form-control" type="text"></div>
+                                                        <div class="col-md-8">
+                                                            <input ng-model="marca.Nombre"  class="form-control InputForm42" type="text">
+                                                        </div>
+                                                    </div> 
+                                                    
+                                                    <p></p>
+                                                    <div class="panel panel-default">
+                                                        <div class="form-group">
+                                                            <label class="col-md-2 control-label labelForm">Modelos: </label>
+                                                            <div class="col-md-8">
+                                                                <input ng-model="marca.Modelo" class="form-control" type="text">
+                                                                
+                                                            </div>
+                                                            <div class="col-md-2"><button id="btnGrabarComen" ng-click="grabarContactoOperador()" class="btn btn-danger">Grabar</button></div>
+                                                             <div class="col-md-10">
+                                                            <table class="table">
+                                                                <tr>
+                                                                    <th width="10px" print-remove></th>
+                                                                    <th width="20px" >Id</th>
+                                                                    <th>Modelos</th>
+                                                                </tr>
+                                                                <tbody>
+
+                                                               <!--   <span style="margin-right:5px;" class="label label-default" ng-repeat="mod in modelos | limitTo:3">{{mod.Modelo}}</span> -->
+                                                                 <tr ng-repeat="data in modelos">
+                                                                    <td><button class="buttonGrilla buttonElimina" ng-click="delRegistro(row)"></button></td>
+                                                                    <td>{{ data.IdReg}}</td>
+                                                                    <td>{{ data.Modelo}}</td>
+                                                                </tr>
+                                                                 <!--  
+                                                                <tr>
+
+                                                              <td><button class="buttonGrilla buttonElimina" ng-click="delRegistro(row)"></button></td><td>2</td><td>dos</td></tr>
+                                                                <tr><td><button class="buttonGrilla buttonElimina" ng-click="delRegistro(row)"></button></td><td>3</td><td>tres</td></tr>
+                                                                <tr><td><button class="buttonGrilla buttonElimina" ng-click="delRegistro(row)"></button></td><td>4</td><td>cuatro</td> -->
+
+                                                                </tr>
+                                                                
+                                                                  <!--   <tr ng-repeat="row in datosMaquinaSinUso  | orderBy:order | limitTo:cantidad">
+                                                                        <td scope="row">{{row.idmaq}}</td>
+                                                                        <td>{{row.tipo}}</td>
+                                                                       
+                                                                    </tr> -->
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+
+                                                        </div>
+                                                      
+
+                                                    
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12">
+                                                            <div class="btn-group pull-right">
+                                                                <button id="btnGrabarComen" ng-click="grabarDatos()" class="btn btn-danger">Grabar</button>
+                                                                <button id="btnCerrarComen" ng-click="cerrar()" class="btn btn-primary">Cerrar</button>
+                                                                <div class="col-md-12"><p></p></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+                        <!-- SEGUNDA COLUMNA -->
+                        <!-- SEGUNDA COLUMNA -->
+                    </div>
+                </section>
+        </div>
+    </div>
+</div>

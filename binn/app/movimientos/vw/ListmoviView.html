@@ -1,0 +1,192 @@
+<menu-dir></menu-dir>
+<div id="page-wrapper" print-section>
+    <div class="row">
+        <div print-only>
+            <img src="binn/images/logo.png" alt="logo">
+        </div>
+        <div class="col-lg-12">
+            <section class="titulo">
+                <section>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <h3>LISTADO DE MOVIMIENTOS</h3>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="col-xs-4"><h5><strong>Estado Máq.:</strong></h5></div>
+                            <div class="col-xs-8">
+                                <select name="IdEstadoMaq" id="IdEstadoMaq" ng-model="movimiento.IdEstadoMaq" ng-change="filtrarPorEstado()" class="form-control">
+                                    <option value="0" selected>TODOS</option>
+                                    <option value="1">OPERATIVA</option>
+                                    <option value="2">EN PANNE</option>
+                                    <option value="3">EN MANTENCIÓN</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 text-right">
+                            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true" print-remove>
+                                <ul class="nav navbar-nav">
+                                    <li class="active">
+                                        <!-- <button class="btn btn-success" ng-click="newRegistro()">Nueva Máquina</button> -->
+                                        <button class="btn btn-success" ui-sref="movimiento.detalle">Nuevo Movimiento</button>
+                                    </li>
+                                    <li uib-dropdown>
+                                        <button class="btn btn-default" ng-controller="DropdownCtrl" uib-dropdown-toggle>
+                                            <span class="glyphicon caret" aria-hidden="true"></span><span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+                                        </button>
+                                        <!--inicio: SUB MENU -->
+                                        <ul class="dropdown-menu table-export list-inline" role="menu" table-selector="'auxTable'" export-options="{type: 'pdf', escape: true, ignoreColumn : '[4]', tableName: 'Movimientos' }">
+                                            <li><a href="#" print-btn> Imprimir </a></li>
+                                            <li te-option te-value="'pdf'" te-param="'type'"><a href=""><i class=""></i>Exportar Pdf </a></li>
+                                            <li te-option te-value="'excel'" te-param="'type'"><a href=""><i class=""></i>Exportar Excel</a></li>
+                                        </ul>
+                                        <!--fin: SUB MENU -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSeparaTop">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="table-container">
+                                <table st-table="movimientos" st-safe-src="MoviDatos" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th width="100px" print-remove></th>
+                                            <th st-sort="Idreg">ID</th>
+                                            <th st-sort="NumReport">Report</th>
+                                            <th st-sort="Fecha">Fecha</th>
+                                            <th st-sort="NomObra">Obra</th>
+                                            <th st-sort="OPerador">Operador</th>
+                                            <th st-sort="Rol">Rol</th>
+                                            <th st-sort="EstadoMaq">Estado Máq.</th>
+                                        </tr>
+                                        <tr print-remove>
+                                            <th colspan="7">
+                                                <input st-search="" class="form-control" placeholder="Buscar ..." type="text" />
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in movimientos" class="hide-in-print">
+                                            <td class="text-right" print-remove>
+                                                <button class="buttonGrilla buttonEditar" ng-click="editRegistro(row)"></button>
+                                                <button class="buttonGrilla buttonElimina" ng-click="delRegistro(row)"></button>
+                                            </td>
+                                            <td>{{ row.Idreg }}</td>
+                                            <td>{{ row.NumReport }}</td>
+                                            <td>{{ row.Fecha  | date : "dd/MM/yyyy"}}</td>
+                                            <td>{{ row.NomObra}}</td>
+                                            <td>{{ row.OPerador}}</td>
+                                            <td>{{ row.Rol }}</td>
+                                            <td>{{ row.EstadoMaq }}</td>
+                                        </tr>
+                                        <tr ng-repeat="row in movimientosPrint" class="show-in-print">
+                                            <td>{{ row.Idreg }}</td>
+                                            <td>{{ row.NumReport }}</td>
+                                            <td>{{ row.Fecha | date : "dd/MM/yyyy" }}</td>
+                                            <td>{{ row.NomObra}}</td>
+                                            <td>{{ row.OPerador}}</td>
+                                            <td>{{ row.Rol }}</td>
+                                            <td>{{ row.EstadoMaq }}</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="7" class="text-center" print-remove>
+                                                <div st-items-by-page="5" st-pagination="" st-template="binn/app/config/pagination.custom.html"></div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <table id="auxTable" name="auxTable" st-table="MoviDatos" style="opacity: 0; position: absolute;">
+                                    <thead>
+                                        <tr>
+                                            <th st-sort="NumReport">Report</th>
+                                            <th st-sort="Fecha">Fecha</th>
+                                            <th></th>
+                                            <th st-sort="OPerador">Obra</th>
+                                          
+                                            <th>Nom.Oper.</th>
+                                            <th></th>
+                                            <th>Nom.Máq.</th>
+                                            <th>Estado Maq.</th>
+                                            <th>Hrs Inicio</th>
+                                            <th>Hrs.Fin</th>
+                                            <th>Hrs.Total</th>
+                                            <th>Hrs.Min.</th>
+                                            <th>Hrs.Min.Valor</th>
+                                            <th>Hrs.Min.Valor Modif</th>
+                                            <th>Hrs.Valor a Pagar</th>
+                                            <th>Kms.Inicio</th>
+                                            <th>Kms.Fin</th>
+                                            <th>Kms.Total</th>
+                                            <th>Kms.Min</th>
+                                            <th>Kms.MinValor</th>
+                                            <th>Kms.Min Valor Modif</th>
+                                            <th>Kms.Valor a Pagar</th>
+                                            <th>Dias Trabajados</th>
+                                            <th>Dias Min</th>
+                                            <th>Dias Valor</th>
+                                            <th>Dias Valor a Pagar</th>
+                                            <th>Comb.Reporte</th>
+                                            <th>Comb.Lts</th>
+                                            <th>Comb.Horometro</th>
+                                            <th>Comb.Odometro</th>
+                                            <th>Comb a Pagar</th>
+                                            <th>Actividades</th>
+                                            <th>Operacion</th>
+                                            <th>Rol</th>
+                                            <th>Obs</th>
+                                            <th>Estado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in MoviDatos">
+                                            <td>{{ row.NumReport }}</td>
+                                            <td>{{ row.Fecha | date : "dd/MM/yyyy" }}</td>
+                                            <td></td>
+                                            <td>{{ row.NomObra}}</td>
+                                            
+                                            <td>{{ row.OPerador }}</td>
+                                            <td></td>
+                                            <td>{{ row.Maquina }}</td>
+                                            <td>{{ row.EstadoMaq }}</td>
+                                            <td>{{ row.Hrsinicio }}</td>
+                                            <td>{{ row.HrsFin }}</td>
+                                            <td>{{ row.HrsTotal }}</td>
+                                            <td>{{ row.HrsMin }}</td>
+                                            <td>{{ row.HrsMinValor }}</td>
+                                            <td>{{ row.HrsMinValorModif }}</td>
+                                            <td>{{ row.HrsValoraPagar }}</td>
+                                            <td>{{ row.Kmsinicio }}</td>
+                                            <td>{{ row.KmsFin }}</td>
+                                            <td>{{ row.KmsTotal }}</td>
+                                            <td>{{ row.KmsMin }}</td>
+                                            <td>{{ row.KmsMinValor }}</td>
+                                            <td>{{ row.KmsMinValorModif }}</td>
+                                            <td>{{ row.KmsValoraPagar }}</td>
+                                            <td>{{ row.DiasTrabajados }}</td>
+                                            <td>{{ row.DiasMin }}</td>
+                                            <td>{{ row.DiasValor }}</td>
+                                            <td>{{ row.DiasValoraPagar }}</td>
+                                            <td>{{ row.CombReporte }}</td>
+                                            <td>{{ row.CombLts }}</td>
+                                            <td>{{ row.CombHorometro }}</td>
+                                            <td>{{ row.CombOdometro }}</td>
+                                            <td>{{ row.CombaPagar }}</td>
+                                            <td>{{ row.Actividades }}</td>
+                                            <td>{{ row.Operacion }}</td>
+                                            <td>{{ row.Rol }}</td>
+                                            <td>{{ row.Obs }}</td>
+                                            <td>{{ row.Estado }}</td>
+                                         
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </section>
+            </section>
+            </div>
+        </div>
+    </div>

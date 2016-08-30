@@ -1,0 +1,39 @@
+<!-- Modal -->
+<!--./HEADER-->
+<div class="modal-header" type="text/ng-template">
+    <button type="button" class="close" ng-click="cerrar()">&times;</button>
+    <h3 class="modal-title"> DETALLE OPERADOR</h3>
+</div>
+<!--./BODY-->
+<div class="modal-body">
+    <form name="frmDatos" class="form-horizontal" novalidate>
+        <div class="form-group">
+            <label class="col-xs-2 control-label labelForm">RUT: </label>
+            <div class="col-xs-10">
+                <input ng-rut id="Rut" ng-model="operador.Rut" class="form-control InputForm42" type="text" placeholder="R.U.T." value="{{operador.Rut}}">
+            </div></div>
+            <div class="form-group">
+                <label class="col-md-2 control-label labelForm">Nombres: </label>
+                <div class="col-md-10">
+                    <input ng-model="operador.Nombres" class="form-control InputForm84" type="text" placeholder="Nombres" value="{{operador.Nombres}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label labelForm">Apellidos: </label>
+                <div class="col-md-10">
+                    <input id="ApePat" ng-model="operador.ApePat" class="form-control InputForm42" type="text" placeholder="Ap.Paterno" value="{{operador.ApePat}}">
+                    <input id="ApeMat" ng-model="operador.ApeMat" class="form-control InputForm42" type="text" placeholder="Ap.Materno" value="{{operador.ApeMat}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <button type="button" class="btn" ng-disabled="frmDatos.$invalid" ng-class="{'btn-default':frmDatos.$invalid, 'btn-primary':frmDatos.$valid}" ng-click="guardar(frmDatos.$valid)">Guardar</button>
+                    <button type="submit" class="btn btn-danger" ng-click="cerrar()"><i class="glyphicon glyphicon-ban-circle">  </i> Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<!--./FOOTER-->
+<div class="modal-footer"></div>

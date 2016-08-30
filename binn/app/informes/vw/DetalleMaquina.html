@@ -1,0 +1,333 @@
+<menu-dir></menu-dir>
+<div id="page-wrapper" print-section>
+    <toast></toast>
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="titulo">
+                <section>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3>DETALLE USO MÁQUINA</h3>
+                            <!--  <para-Dir idp="5"  nomobj="Accesito"></Para-Dir> -->
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button id="volver" class="btn btn-primary">Volver al inicio</button>
+                        </div>
+                        <!-- <div class="col-xs-6 text-right" ng-controller="SubMenuOperadorCtrl"> -->
+                        <!--div class="col-xs-6 text-right">
+                            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true" print-remove>
+                                <ul class="nav navbar-nav">
+                                    <li uib-dropdown>
+                                        <button class="btn btn-default" ng-controller="DropdownCtrl" uib-dropdown-toggle>
+                                            <span class="glyphicon caret"></span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                        </button>
+                                        <!--inicio: SUB MENU -->
+                        <!--ul class="dropdown-menu" role="menu">
+                                            <!--li><a ng-click="openHistModif()"> Histórico de Modificaciones </a></li-->
+                        <!--li><a ng-click="openMaquinasUtilizadas()">Histórico de Máquinas utilizadas</a></li>
+                                        </ul>
+                                        <!--fin: SUB MENU -->
+                        <!--/li>
+                                </ul>
+                            </div>
+                        </div-->
+                    </div>
+                    <div class="row rowSeparaTop">
+                        <!--Inicio sección perfil y contacto de funcionario-->
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-xs-12 ">
+                                        <!-- <div ng-controller="OperadorDetPerfilCtrl"> -->
+                                        <form name="DetMaquina" class="form" novalidate>
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="col-xs-2 col-xs-offset-7">Nombre Obra: </label>
+                                                    <div class="col-xs-3">
+                                                        <select name="IdObra" id="IdObra" ng-model="detMaquina.IdObra" class="form-control" required>
+                                                            <option ng-repeat="option in selectObras.availableOptions" value="{{option.idReg}}">{{option.Nombre}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <hr>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-4">
+                                                    <h5><strong>Fechas:</strong></h5></div>
+                                                <div class="col-xs-6">
+                                                    <select class="form-control" ng-change="modoFecha()" id="selectFechas" ng-model="escogerFecha">
+                                                        <option value="uno">Por mes</option>
+                                                        <option value="dos">Por rango de fechas</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12" ng-show="modo">
+                                                <div class="form-group">
+                                                    <label class="col-xs-4 control-label labelForm">Mes: </label>
+                                                    <div class="col-md-6">
+                                                        <p class="input-group">
+                                                            <input type="text" uib-datepicker-popup="{{format}}" datepicker-mode="month" class="form-control" uib-datepicker-popup ng-model="Mes" is-open="popupMes.opened" datepicker-options="dateOptions"  close-text="Close" />
+                                                          <span class="input-group-btn">
+                                                            <button type="button" class="btn btn-info" ng-click="openMes()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                          </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12" ng-hide="modo">
+                                                <st-date-range predicate="fecha" after="query.after" before="query.before"></st-date-range>
+                                            </div>
+                                        </form>
+                                        <div class="col-xs-12">
+                                            <hr>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <h5>DETALLE MÁQUINA</h5>
+                                            <div class="col-xs-1">Nombre Equipo</div>
+                                            <div class="col-xs-3">
+                                                <select name="NombreMaquina" id="NombreMaquina" ng-model="maquina.NombreMaq" class="form-control"  required>
+                                                        <option ng-repeat="option in selectNombres.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                    </select>
+                                            </div>
+                                            <div class="col-xs-1">Modelo</div>
+                                            <div class="col-xs-3">
+                                                <select name="Modelo" id="Modelo" ng-model="maquina.IdModelo" class="form-control">
+                                                    <option ng-repeat="option in selectModelos.availableOptions" value="{{option.IdReg}}">{{option.Modelo}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xs-1">Patente</div>
+                                            <div class="col-xs-3">
+                                                <input type="text" ng-model="maq.patente" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <hr>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-12">
+                                                    <h5>A PAGAR</h5>
+                                                    <label class="col-xs-8" for="TotalHrs">TOTAL DE HRS. A PAGAR EN EL PERÍODO</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-8" for="TotalHrs2">TOTAL DE KILOMETRAJE A PAGAR EN EL PERÍODO</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs2" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-8" for="TotalHrs3">TOTAL DE DÍAS A PAGAR</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs3" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <hr>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <h5>REAL</h5>
+                                                    <label class="col-xs-8" for="TotalHrs">TOTAL DE HRS. DE TRABAJO DE LA MÁQUINA EN EL PERÍODO</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-8" for="TotalHrs2">TOTAL DE KILÓMETROS DE ACUERDO AL ODÓMETRO</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs2" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-8" for="TotalHrs3">TOTAL DE DÍAS TRABAJADOS</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs3" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-12">
+                                                    <div class="panel panel-success"  ng-controller="GrafHrsaPagarCtrl">
+                                                        <highchart id="chart1" config="chartConfig" class="span9" ></highchart>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <div class="panel panel-success"  ng-controller="GrafKmsaPagarCtrl">
+                                                        <highchart id="chart2" config="chartConfig" class="span9" ></highchart>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <div class="panel panel-success"  ng-controller="GrafDiasaPagarCtrl">
+                                                        <highchart id="chart3" config="chartConfig" class="span9" ></highchart>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <hr>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-12">
+                                                    <h5>COMBUSTIBLE</h5>
+                                                    <label class="col-xs-8" for="TotalHrs">TOTAL DE COMBUSTIBLE CARGADO</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <hr>
+                                            <h5>RENDIMIENTO</h5>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="col-xs-4">
+                                                <div class="col-xs-12">
+                                                    <h5>HORAS</h5>
+                                                    <label class="col-xs-8" for="TotalHrs">RENDIMIENTO EN HORAS</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <div class="col-xs-12">
+                                                    <h5>KILÓMETROS</h5>
+                                                    <label class="col-xs-8" for="TotalHrs">RENDIMIENTO EN KMS.</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <div class="col-xs-12">
+                                                    <h5>DÍAS</h5>
+                                                    <label class="col-xs-8" for="TotalHrs">RENDIMIENTO EN DÍAS</label>
+                                                    <div class="col-xs-4">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <hr>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <h5>OTRA INFORMACIÓN</h5>
+                                            <br>
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-12">
+                                                    
+                                                    <label class="col-xs-4" for="TotalHrs">RENDIMIENTO EN HORAS</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-4" for="TotalHrs">OBRAS EN LAS QUE TRABAJÓ</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-4" for="TotalHrs">DÍAS DE MANTENCIÓN</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-4" for="TotalHrs">DÍAS EN PANNE</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control" id="TotalHrs" disabled ng-model="maquina.TotalHrs">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-4" for="TotalHrs">LISTADO DE ROL EN LOS QUE TRABAJÓ</label>
+                                                    <div class="col-xs-8">
+                                                        <table class="table table-striped table-condensed table-bordered">
+                                                            <tr>
+                                                                <td>ROL 1</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ROL 2</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ROL 3</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ROL 4</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-4" for="TotalHrs">LISTA DE OPERACIÓN REALIZADOS</label>
+                                                    <div class="col-xs-8">
+                                                        <table class="table table-striped table-condensed table-bordered">
+                                                            <tr>
+                                                                <td>OPERACIÓN 1</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPERACIÓN 2</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPERACIÓN 3</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPERACIÓN 4</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <label class="col-xs-4" for="TotalHrs">LISTADO DE OPERADOR</label>
+                                                    <div class="col-xs-8">
+                                                        <table class="table table-striped table-condensed table-bordered">
+                                                            <tr>
+                                                                <td>OPERADOR 1</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPERADOR 2</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPERADOR 3</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OPERADOR 4</td>
+                                                                <td>DÍAS</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        </section>
+    </div>
+</div>
+</div>

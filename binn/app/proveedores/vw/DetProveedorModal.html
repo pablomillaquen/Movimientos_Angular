@@ -1,0 +1,80 @@
+<!-- Modal -->
+<!--./HEADER-->
+<div class="modal-header" type="text/ng-template">
+    <button type="button" class="close" ng-click="cerrar()">&times;</button>
+    <h3 class="modal-title">Detalle de Proveedor</h3> 
+    <input ng-model="proveedor.IdReg" class="form-control InputForm20" type="hidden" >
+  <!--   <toast></toast> -->
+</div>
+<!--./BODY-->
+<div class="modal-body">
+<!--  <div class="clearfix">
+      <label lass="col-xs-3 control-label labelForm" for="foo">Bar</label>
+      <input id="foo" name="foo" type="text" value=""/>
+    </div>
+ -->
+
+    <div class="row">
+        <form id="frmDatos" method="post" class="form-horizontal">
+            <div class="col-xs-12 col-md-12">
+                <form id="frmDatos" method="post" class="form-horizontal">
+                  <!--   <div class="col-xs-12 col-md-12"> -->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label labelForm">Rut: </label>
+                            <p ng-bind-html="TextRut"></p>
+                                <div class="col-md-8">
+                                    <input ng-rut rut-format="live"   type="text" ng-model="proveedor.Rut" id="txtRut" class="form-control" type="text" ng-blur="ValidaRut()">
+                                    <button type="submit" class="btn btn-info" ng-click="LimpiaDatos()"><i class="glyphicon glyphicon-th-list">  </i> Limpiar</button>
+                                </div><div class="col-md-1 pull-left">
+                                    
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label labelForm">Razón Social: </label>
+                            <div class="col-md-8">
+                                <textarea class="form-control" ng-model="proveedor.RazonSocial" rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label labelForm">Giro: </label>
+                            <div class="col-md-8">
+                                <textarea class="form-control" ng-model="proveedor.Giro" rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label labelForm">Dirección: </label>
+                            <div class="col-md-8">
+                                <input class="form-control" type="text"   ng-model="proveedor.Direccion" placeholder="Dirección" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label labelForm">Comuna: </label>
+                            <div class="col-md-5">
+                                 <para-Dir idp="1" nomobj="Comunas" val="{{proveedor.IdComuna}}">
+                            </Para-Dir>{{proveedor.IdComuna}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="btn-group pull-right">
+                                    <button id="btnGrabarComen" ng-click="grabarDatos()" class="btn btn-danger">Grabar</button>
+                                    <button id="btnCerrarComen" ng-click="cerrar()" class="btn btn-primary">Cerrar</button>
+                                    <div class="col-md-12"><p></p></div>
+                                </div>
+                            </div>
+                        </div>
+                  <!--   </div> -->
+                </form>
+
+            </div>
+        </form>
+    </div>
+</div>
+<!--./FOOTER
+<div class="modal-footer">
+    <div class="form-group">
+        <div class="col-md-12">
+            <button class="btn btn-info" ng-click="cerrar()"><i class="glyphicon glyphicon-th-list">  </i> Cancelar</button>
+        </div>
+    </div>
+</div>-->

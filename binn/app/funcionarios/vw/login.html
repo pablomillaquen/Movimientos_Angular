@@ -1,0 +1,40 @@
+<style type="">
+    .txtLogo{ margin-left: 10px; text-align: right; } .colorBlanco{ color: #fff; } .colorGriss{ color: #333; } .headerModal { background-color: green; height: 71px; } body{background-image: url(binn/images/fondo4.jpg)}
+</style>
+<section>
+    <div id="loginModal" class="modal show" style="margin-top:100px;" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-image: url(http://ap.dgca.cl/binn/css/bg.png);">
+                <div class="modal-body">
+                    <div class="col-md-6"> <img src="http://ap.dgca.cl/binn/images/logo.png" width="262" height="51"> </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-12 txtLogo colorGriss">
+                        <p>
+                            <h4>ACCESO AL SISTEMA</h4></p>
+                    </div>
+                    <form name="frmAcceso" class="form col-md-12 center-block" role="form" novalidate>
+                        <div class="form-group">
+                            <input type="email" class="form-control input-lg" required placeholder="Email" ng-model="user.email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control input-lg" required placeholder="Password" ng-model="user.password">
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="btn-group">
+                                   <!--  <button ng-disabled="frmAcceso.$invalid" class="btn" ng-class="{'btn-default':frmAcceso.$invalid, 'btn-danger':frmAcceso.$valid}" ng-click="login()">INGRESAR</button>  -->
+                                   <button  class="btn btn-default" ui-sref="inicio">INGRESAR</button>
+                                    <button class="btn btn-default"  ui-sref="login.recupera">Recuperar Clave</button>
+                                </div>
+                            </div>
+                            <span class="pull-right"><a href="#">Dudas?, Contactenos</a></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

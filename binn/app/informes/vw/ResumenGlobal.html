@@ -1,0 +1,136 @@
+<menu-dir></menu-dir>
+<div id="page-wrapper" print-section>
+    <toast></toast>
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="titulo">
+                <section>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3>RESUMEN GLOBAL</h3>
+                            <!--  <para-Dir idp="5"  nomobj="Accesito"></Para-Dir> -->
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button id="volver" class="btn btn-primary">Volver al inicio</button>
+                        </div>
+                        <!-- <div class="col-xs-6 text-right" ng-controller="SubMenuOperadorCtrl"> -->
+                        <!--div class="col-xs-6 text-right">
+                            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true" print-remove>
+                                <ul class="nav navbar-nav">
+                                    <li uib-dropdown>
+                                        <button class="btn btn-default" ng-controller="DropdownCtrl" uib-dropdown-toggle>
+                                            <span class="glyphicon caret"></span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                        </button>
+                                        <!--inicio: SUB MENU -->
+                        <!--ul class="dropdown-menu" role="menu">
+                                            <!--li><a ng-click="openHistModif()"> Histórico de Modificaciones </a></li-->
+                        <!--li><a ng-click="openMaquinasUtilizadas()">Histórico de Máquinas utilizadas</a></li>
+                                        </ul>
+                                        <!--fin: SUB MENU -->
+                        <!--/li>
+                                </ul>
+                            </div>
+                        </div-->
+                    </div>
+                    <div class="row rowSeparaTop">
+                        <!--Inicio sección perfil y contacto de funcionario-->
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-xs-12 ">
+                                        <!-- <div ng-controller="OperadorDetPerfilCtrl"> -->
+                                        <form name="FormLiqxObra" class="form" novalidate>
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="col-xs-2 col-xs-offset-7">Nombre Obra: </label>
+                                                    <div class="col-xs-3">
+                                                        <select name="IdObra" id="IdObra" ng-model="detMaquina.IdObra" class="form-control" required>
+                                                            <option ng-repeat="option in selectObras.availableOptions" value="{{option.idReg}}">{{option.Nombre}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <hr>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="col-xs-4">
+                                                    <h5><strong>Fechas:</strong></h5></div>
+                                                <div class="col-xs-6">
+                                                    <select class="form-control" ng-change="modoFecha()" id="selectFechas" ng-model="escogerFecha">
+                                                        <option value="uno">Por mes</option>
+                                                        <option value="dos">Por rango de fechas</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12" ng-show="modo">
+                                                <div class="form-group">
+                                                    <label class="col-xs-4 control-label labelForm">Mes: </label>
+                                                    <div class="col-md-6">
+                                                        <p class="input-group">
+                                                            <input type="text" uib-datepicker-popup="{{format}}" datepicker-mode="month" class="form-control" uib-datepicker-popup ng-model="Mes" is-open="popupMes.opened" datepicker-options="dateOptions"  close-text="Close" />
+                                                          <span class="input-group-btn">
+                                                            <button type="button" class="btn btn-info" ng-click="openMes()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                          </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12" ng-hide="modo">
+                                                <st-date-range predicate="fecha" after="query.after" before="query.before"></st-date-range>
+                                            </div>
+                                        </form>
+                                        <div class="col-xs-12">
+                                            <hr>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <table class="table table-bordered table-condensed">
+                                                <thead>
+                                                    <tr class="info">
+                                                        <th>NOMBRE OBRA</th>
+                                                        <th>GASTOS EN COMBUSTIBLES</th>
+                                                        <th>GASTOS OPERACIONALES</th>
+                                                        <th>TOTAL</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>OBRA 1</td>
+                                                        <td>Total Petróleo Obra 1</td>
+                                                        <td>Total Costo Obra 1</td>
+                                                        <td>Total Obra 1</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OBRA 2</td>
+                                                        <td>Total Petróleo Obra 2</td>
+                                                        <td>Total Costo Obra 2</td>
+                                                        <td>Total Obra 2</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OBRA 3</td>
+                                                        <td>Total Petróleo Obra 3</td>
+                                                        <td>Total Costo Obra 3</td>
+                                                        <td>Total Obra 3</td>
+                                                        
+                                                    </tr>
+                                                    <tr class="active">
+                                                        <td>GASTO TOTAL DE LA EMPRESA:</td>
+                                                        <td>TOTAL COSTO</td>
+                                                        <td>TOTAL PETRÓLEO</td>
+                                                        <td>TOTAL A PAGAR</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        </section>
+    </div>
+</div>
+</div>

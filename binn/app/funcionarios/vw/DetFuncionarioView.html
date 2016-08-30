@@ -1,0 +1,274 @@
+<menu-dir></menu-dir>
+<div id="page-wrapper" print-section>
+    <toast></toast>
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="titulo">
+                <section>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3>DETALLE FUNCIONARIO</h3>
+                            <!--  <para-Dir idp="5"  nomobj="Accesito"></Para-Dir> -->
+                        </div>
+                        <!-- <div class="col-xs-6 text-right" ng-controller="SubMenuOperadorCtrl"> -->
+                        <div class="col-xs-6 text-right">
+                            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed=true" print-remove>
+                                <ul class="nav navbar-nav">
+                                    <li uib-dropdown>
+                                        <button class="btn btn-default" ng-controller="DropdownCtrl" uib-dropdown-toggle>
+                                            <span class="glyphicon caret"></span><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                                        </button>
+                                        <!--inicio: SUB MENU -->
+                                        <ul class="dropdown-menu" role="menu">
+                                            <!--li><a ng-click="openHistModif()"> Histórico de Modificaciones </a></li-->
+                                            <li><a ng-click="openMaquinasUtilizadas()">Histórico de Máquinas utilizadas</a></li>
+                                        </ul>
+                                        <!--fin: SUB MENU -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rowSeparaTop">
+                        <!--Inicio sección perfil y contacto de funcionario-->
+                        <div class="col-lg-8">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-xs-10 col-md-12">
+                                        <!-- <div ng-controller="OperadorDetPerfilCtrl"> -->
+                                        <div>
+                                            <form name="FormFuncionario" class="form-horizontal" novalidate>
+                                                <div class="col-xs-10 col-md-10">
+                                                    <div class="form-group">
+                                                        <label class="col-xs-2 control-label labelForm">Rut:</label>
+                                                        <div class="col-md-8">
+                                                            <input name="RUT" ng-rut type="text" rut-format="live" ng-model="operador.rutcompleto" id="txtRut" class="form-control" type="text" required maxlength="12" >
+                                                            <button ng-click="openBuscarOperador(operador.rutcompleto)" class="btn btn-danger" data-toggle="modal" data-target="#modal"><i class="glyphicon glyphicon-search"></i>
+                                                            </button>
+                                                            <button class="btn btn-info" ng-click="LimpiaDatos()"><i class="glyphicon glyphicon-th-list">  </i> Limpiar
+                                                            </button>
+                                                            <div class="btn-group dropdown" uib-dropdown="" style="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-md-offset-2">
+                                                            <p class="alert alert-danger" ng-show="FormFuncionario.RUT.$dirty&&FormFuncionario.RUT.$invalid"><strong>Error:</strong> RUT NO VÁLIDO</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Nombres: </label>
+                                                        <div class="col-md-10">
+                                                            <input ng-model="operador.nombres" class="form-control InputForm42" type="text" placeholder="Nombre">
+                                                            <input ng-model="operador.apepat" class="form-control InputForm42" type="text" placeholder="Paterno">
+                                                            <input ng-model="operador.apemat" class="form-control InputForm42" type="text" placeholder="Materno">
+                                                            <!--input ng-model="operador.idreg" class="form-control InputForm20" type="text" placeholder="Id" -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Acceso: </label>
+                                                        <div class="col-md-4">
+                                                            <!--para-Dir idp="12" nomobj="Acceso" val="{{operador.idacceso}}">
+                                                            </Para-Dir-->
+                                                            <select name="Acceso" id="Acceso" ng-model="operador.idacceso" class="form-control">
+                                                                <option ng-repeat="option in selectAccesos.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <p></p>
+                                                    <div class="panel panel-default">
+                                                        <div class="form-group">
+                                                            <label class="col-md-2 control-label labelForm">Usuario: </label>
+                                                            <div class="col-md-4">
+                                                                <input ng-model="operador.User" class="form-control " type="text" placeholder="Usuario">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-md-2 control-label labelForm">Clave: </label>
+                                                            <div class="col-md-4">
+                                                                <input ng-model="operador.contrasena" class="form-control " type="password" > 
+                                                            </div>
+                                                            <div class="col-md-5 alert alert-info" ng-show="operador.Pass">Ingrese una nueva contraseña, si desea modificar</div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="col-md-12">
+                                                            <div class="btn-group pull-right">
+                                                                <button id="btnGrabarComen" ng-click="grabarDatos()" ng-disabled="FormFuncionario.$invalid" class="btn" ng-class="{'btn-default':FormFuncionario.$invalid, 'btn-danger':FormFuncionario.$valid}">Grabar</button>
+                                                                <button ng-disabled="FormFuncionario.$invalid" class="btn" ng-class="{'btn-default':FormFuncionario.$invalid, 'btn-info':FormFuncionario.$valid}" ng-click="EliminarFunc()">Eliminar</button>
+                                                                <button id="btnCerrarComen" ng-click="cerrar()" class="btn btn-primary">Cerrar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Inicio sección Contacto-->
+                            <div class="col-lg-12" ng-controller="OperadorDetContactoCtrl">
+                                <div class="panel panel-info">
+                                    <div class="panel-body">
+                                        <div class="col-md-12">
+                                            <h4 class="text-primary">CONTACTO FUNCIONARIO</h4>
+                                            <form name="frmContacto" id="frmContacto" method="post" class="form-horizontal" novalidate>
+                                                <div class="form-group">
+                                                    <label class="col-md-2 control-label labelForm">TIPO: </label>
+                                                    <div class="col-md-4">
+                                                        <!--para-Dir idp="14" nomobj="TipoContacto" val="{{contacto.tipo}}"></Para-Dir-->
+                                                        <select name="contacto" id="contacto" ng-model="tipos.repeatSelect" class="form-control" required>
+                                                            <option ng-repeat="option in tipos.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input ng-model="contacto.detalle" class="form-control " type="text" placeholder="Detalle" required>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <button ng-disabled="frmContacto.$invalid" class="btn" ng-class="{'btn-default':frmContacto.$invalid, 'btn-danger':frmContacto.$valid}" ng-click="grabarContactoOperador()">Grabar</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <table class="table table-bordered">
+                                                        <tr class="info">
+                                                            <th width="1px"></th>
+                                                            <th width="40px">Tipo</th>
+                                                            <th>Contacto</th>
+                                                        </tr>
+                                                        <tbody>
+                                                            <tr ng-repeat="contacto in contactos">
+                                                                <td>
+                                                                    <button class="buttonGrilla buttonElimina" ng-click="eliminaContacto(contacto)"></button>
+                                                                </td>
+                                                                <td>{{contacto.TipoContacto}}</td>
+                                                                <td>{{contacto.Detalle}}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Fin sección contacto-->
+                        </div>
+                        <!-- SEGUNDA COLUMNA -->
+                        <!--Inicio sección Cargos-->
+                        <div class="col-lg-4" ng-controller="OperadorDetCargosCtrl">
+                            <!--div class="col-lg-4"-->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">CARGOS</div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-body">
+                                                <form name="formCargos" method="post" class="form-horizontal" novalidate>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Cargo: </label>
+                                                        <div class="col-md-6">
+                                                            <!--para-Dir idp="6" nomobj="cargo.IdCargo">
+                                                        </Para-Dir-->
+                                                            <select name="contacto" id="contacto" ng-model="selectCargos.repeatSelect" class="form-control" required>
+                                                                <option ng-repeat="option in selectCargos.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <button ng-disabled="formCargos.$invalid" class="btn" ng-class="{'btn-default':formCargos.$invalid, 'btn-danger':formCargos.$valid}" ng-click="guardarCargo()">Grabar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr ng-repeat="cargo in cargos">
+                                                        <td>
+                                                            <button class="buttonGrilla buttonElimina" ng-click="EliminarCargo(cargo)"></button>
+                                                        </td>
+                                                        <td>{{cargo.Cargo}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- </div>
+                        Fin sección Cargos-->
+                            <!--Inicio sección Horas
+                        <div class="col-lg-4">-->
+                            <div class="panel panel-danger" ng-controller="OperadorDetHorasCtrl">
+                                <div class="panel-heading">HORAS EXTRAS - TRABAJADAS - COLACIONES</div>
+                                <div class="panel-body">
+                                    <div class="col-md-12">
+                                        <div class="panel panel-danger">
+                                            <form name="formHoras" method="post" class="form-horizontal" novalidate>
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Fecha: </label>
+                                                        <div class="col-md-10">
+                                                            <!--input ng-model="hora.fecha" class="form-control " type="text" placeholder="Fecha"-->
+                                                            <p class="input-group">
+                                                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" required />
+                                                                <span class="input-group-btn">
+                                                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                          </span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-2 control-label labelForm">Tipo: </label>
+                                                        <div class="col-md-4">
+                                                            <!--para-Dir idp="15" nomobj="TipoHora">
+                                                        </Para-Dir-->
+                                                            <select name="S_hora" id="S_hora" ng-model="selectHoras.repeatSelect" class="form-control" required>
+                                                                <option ng-repeat="option in selectHoras.availableOptions" value="{{option.IdDet}}">{{option.Descrip1}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <input ng-model="hora.totalHoras" class="form-control " type="number" placeholder="Total horas " required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group pull-left">
+                                                        <p></p>
+                                                        <div class="col-md-2"></div>
+                                                        <button ng-disabled="formHoras.$invalid" class="btn" ng-class="{'btn-default':formHoras.$invalid, 'btn-danger':formHoras.$valid}" ng-click="guardarHoras()">Grabar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <table class="table">
+                                            <tr>
+                                                <th></th>
+                                                <th>Fecha</th>
+                                                <th>Tipo</th>
+                                                <th>Hrs.</th>
+                                            </tr>
+                                            <tbody>
+                                                <tr ng-repeat="hora in horas">
+                                                    <td>
+                                                        <button class="buttonGrilla buttonElimina" ng-click="eliminarHora(hora)"></button>
+                                                    </td>
+                                                    <td>{{hora.Fecha | date:'dd-MM-yyyy'}}</td>
+                                                    <td ng-if="hora.IdTipoHrs == 1" class="text-center">TRABAJADAS</td>
+                                                    <td ng-if="hora.IdTipoHrs == 2" class="text-center">HRS.EXTRA</td>
+                                                    <td ng-if="hora.IdTipoHrs == 3" class="text-center">COLACIÓN</td>
+                                                    <td class="text-center">{{hora.Hrs}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Fin sección horas-->
+                        <!-- SEGUNDA COLUMNA -->
+                    </div>
+                </section>
+        </div>
+    </div>
+</div>

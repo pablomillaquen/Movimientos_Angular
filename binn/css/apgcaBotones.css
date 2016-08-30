@@ -1,0 +1,152 @@
+.buttonGrilladiv {
+    background: transparent;
+    width: 120px;
+    display: block;
+}
+
+.buttonGrilla {
+    border: none;
+}
+
+.buttonEditar {
+    background: transparent;
+    background-image: url('http://ap.dgca.cl/binn/botones/btngrillaEditar.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 40px;
+    background-position: center top;
+    display: inline;
+    border: none;
+}
+
+.buttonEliminar {
+    background: transparent;
+    background-image: url('http://ap.dgca.cl/binn/botones/btngrillaElimMedio.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 40px;
+    background-position: center top;
+    display: inline;
+    border: none;
+}
+
+.buttonComentarios {
+    background: transparent;
+    background-image: url('http://ap.dgca.cl/binn/botones/btngrillaDue.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 40px;
+    background-position: center top;
+    display: inline;
+    border: none;
+}
+
+
+/* AUTOCOMPLETAR  */
+
+
+/* highlight results */
+
+.ui-autocomplete span.hl_results {
+    background-color: #ffff66;
+}
+
+
+/* loading - the AJAX indicator */
+
+.ui-autocomplete-loading {
+    background: white url('binn/botones/loader.gif') right center no-repeat;
+}
+
+
+/* scroll results */
+
+.ui-autocomplete {
+    max-height: 250px;
+    max-width: 470px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding for vertical scrollbar */
+    padding-right: 5px;
+    position: absolute;
+    padding: 10px 0 0 0;
+    background-image: url(binn/botones/as_pointer.gif);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.ui-autocomplete ul {
+    /* background-color: yellow;
+    color: #fff;*/
+    max-height: 250px;
+    -webkit-border-radius: 5px 10px;
+    /* Safari  */
+    -moz-border-radius: 5px 10px;
+    /* Firefox */
+    background-color: #333;
+    background-image: url(binn/botones/as_pointer.gif);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.ui-autocomplete li {
+    font-size: 12px;
+    background-color: #333;
+    color: #fff;
+    list-style: none;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/* IE 6 doesn't support max-height
+* we use height instead, but this forces the menu to always be this tall
+*/
+
+* html .ui-autocomplete {
+    height: 250px;
+}
+
+
+/*</style>
+
+<style type="text/css" media="screen">*/
+
+.btnPdf {
+    width: 50px;
+    height: 50px;
+    background: url('http://ap.dgca.cl/binn/botones/btnPdf.png') no-repeat center center;
+    cursor: pointer;
+}
+
+.btnPrint {
+    width: 50px;
+    height: 50px;
+    background: url('http://ap.dgca.cl/binn/botones/btnPrint.png') no-repeat center center;
+    cursor: pointer;
+}
+
+.btnExcell {
+    background: url('http://ap.dgca.cl/binn/botones/btnExcel.png') no-repeat center center;
+    cursor: pointer;
+}
+
+td.details-control {
+    padding: 0px 0px 0px 0px;
+}
+
+tr.details td.details-control {}
+
+.toolbar {
+    float: left;
+}
+
+.even {
+    background-color: #c4ffc4 !important;
+}
+
+.finalizadas {
+    background-color: #fff0c4 !important;
+}

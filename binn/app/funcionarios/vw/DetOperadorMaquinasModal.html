@@ -1,0 +1,54 @@
+<!-- Modal -->
+<!--./HEADER-->
+<div class="modal-header" type="text/ng-template">
+    <button type="button" class="close" ng-click="cerrar()">&times;</button>
+    <h3 class="modal-title">Histórico máquinas utilizadas</h3>
+</div>
+<!--./BODY-->
+<div class="modal-body">
+    <div class="row">
+        <form id="frmDatos" method="post" class="form-horizontal">
+            <div class="col-xs-10 col-md-10">
+                <h4>AQUI VAN LAS MAQUINAS USADAS POR EL OPERADOR</h4>
+                <h5>Ejemplo:</h5>
+                <table st-table="displayed" st-safe-src="datosHistoricoMaquinas" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th st-sort="Fecha">Fecha</th>
+                            <th st-sort="Tipo">Tipo</th>
+                            <th st-sort="Marca">Marca</th>
+                            <th st-sort="Modelo">Modelo</th>
+                            <th st-sort="Patente">Patente</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in displayed">
+                            <td>{{row.fecha | date}}</td>
+                            <td>{{row.tipo | uppercase}}</td>
+                            <td>{{row.marca | uppercase}}</td>
+                            <td>{{row.modelo | uppercase}}</td>
+                            <td>{{row.patente | uppercase}}</td>
+                            
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <div st-items-by-page="8" st-pagination="" st-template="binn/app/config/pagination.custom.html"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+<!--./FOOTER-->
+<div class="modal-footer">
+    <div class="form-group">
+        <div class="col-md-12">
+            <button class="btn btn-info" ng-click="cerrar()"><i class="glyphicon glyphicon-th-list">  </i> Cancelar</button>
+        </div>
+    </div>
+</div>

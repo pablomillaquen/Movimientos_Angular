@@ -1,0 +1,1139 @@
+/*@import url(bootstrap.min.css);*/
+
+@import url(bootstrap-3.1.1.css);
+/*@import url(bootstrap-datetimepicker.min.css);*/
+@import url(../font-awesome/css/font-awesome.css);
+@import url(sticky-footer.css);
+@import url(pagination-smart-table.css);
+
+@import url(angularPrint.css) print;  /*OBJETO INMPRIMIR*/
+
+@import url(angular-toastr.css);
+
+body {
+    font-family: 'Open Sans', 'sans-serif';
+    font-size: 12px
+}
+
+.page-wrapper {
+    margin-top: 10px
+}
+
+@media (min-width: 768px) {
+    #page-wrapper {
+        margin-top: 70px
+    }
+}
+
+#DetMsg {
+    border: 1px solid;
+    margin: 0px 0px
+}
+
+#DetMsg h3 {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-block
+}
+
+#msgRut {
+    color: #fff;
+    background-color: #d9534f;
+    font-size: 18;
+    width: 100%;
+    text-align: center;
+    border: 1px solid
+}
+
+#txtId {
+    background-color: transparent;
+    border: none;
+    min-width: 5px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    color: #ccc
+}
+
+.bootstrap-datetimepicker-widget ul {
+    padding: 0
+}
+
+.GrillaPeq {
+    padding: 0px !important
+}
+
+#ListSucursal {
+    padding-top: 0px;
+    vertical-align: text-top
+}
+
+#TableForm {
+    width: 100%
+}
+
+#TableForm td {
+    padding: 5px 5px 5px 5px
+}
+
+#TableForm td .Rut {
+    width: 100px !important
+}
+
+#TableForm td .Dv {
+    width: 60px !important
+}
+
+#TableForm td .form-group {
+    margin-bottom: 0
+}
+
+#TableForm td .form-group-Fecha {
+    width: 150px !important
+}
+
+#TableForm th {
+    width: 10%;
+    height: 20px;
+    text-align: right;
+    color: #666;
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+#txtDv {
+    width: 50px !important;
+    display: inline-block;
+    text-align: center
+}
+
+#txtRut {
+    width: 120px !important;
+    display: inline-block;
+    text-align: center
+}
+
+.FondoTitulo {
+    border: 1px solid #ddd;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    color: #666
+}
+
+.rowSeparaTop {
+    margin-top: 10px
+}
+
+.navbar-brand {
+    padding: 0px 0px
+}
+
+.dropdown {
+    margin-right: 10px
+}
+
+.dropdown img:hover {
+    background-color: #207ce5;
+    border: 0px
+}
+
+.badge {
+    background-color: #dff0d8 !important;
+    color: #3c763d;
+    font-size: 10px !important;
+    padding: 10px 5px !important;
+    font-style: normal !important
+}
+
+li .alertaIco {
+    background-color: transparent
+}
+
+li .alertaIco span {
+    background-color: #0F3 !important
+}
+
+li .alertaIco .open {
+    background-color: blue
+}
+
+li .FormTicket {
+    color: #c94544;
+    width: 200px;
+    padding: 10px 10px 10px 10px;
+    background-color: rgba(72, 184, 77, 0.5);
+    background-image: url(bg6.png)
+}
+
+li select,
+li option,
+li input,
+li button {
+    margin: 5px 2px 5px 2px !important
+}
+
+li .Detalle {
+    height: 180px
+}
+
+li .Detalle span {
+    color: #c94544;
+    margin-right: 10px
+}
+
+.liUser {
+    color: #09F;
+    margin: 10px 10px 10px 10px
+}
+
+.menutop .dropdown-toggle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px
+}
+
+.menutop a {
+    padding: 35px 15px 33px;
+    display: block;
+    -ms-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    text-decoration: none;
+    color: #FFF
+}
+
+.menutop a:hover {
+    color: #000
+}
+
+section .row .col-md-2 {
+    padding-top: 10px
+}
+
+section .titulo {
+    top: 30px;
+    position: relative;
+    width: 98%;
+    margin: 0px 0px 0px 10px !important;
+    border: 1px solid #CCC;
+    background-image: url("bg.png");
+    background-repeat: repeat-x;
+    background-color: #fff;
+    padding: 6px 10px 10px;
+    webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.15)
+}
+
+section .titulo h2 {
+    color: #666;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #999999
+}
+
+.navbarDEGRADADO {
+    background-clip: padding-box;
+    background: #4ca9f5;
+    background: -moz-linear-gradient(left, #4ca9f5 0%, #207ce5 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #4ca9f5), color-stop(100%, #207ce5));
+    background: -webkit-linear-gradient(left, #4ca9f5 0%, #207ce5 100%);
+    background: -o-linear-gradient(left, #4ca9f5 0%, #207ce5 100%);
+    background: -ms-linear-gradient(left, #4ca9f5 0%, #207ce5 100%);
+    background: linear-gradient(to right, #4ca9f5 0%, #207ce5 100%);
+    /*filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4ca9f5', endColorstr='#207ce5', GradientType=1)
+*/}
+
+.dropdown-toggleMOR a {
+    color: #FFF !important
+}
+
+.activeMOR {
+    background-color: #F33
+}
+
+.activeMOR a {
+    color: #FFF !important
+}
+
+.activeMOR a:hover {
+    background-color: #F33 !important
+}
+
+.boton {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    position: relative;
+    color: #67686e
+}
+
+#BotoneraForm {
+    padding-left: 10%;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase
+}
+
+#BotoneraForm .Default {
+    font-size: 11px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #666;
+    margin: 0 3px;
+    padding: 7px 12px;
+    background: #f1f1f1;
+    background-image: -webkit-gradient(linear, 0% 40%, 0% 70%, from(#f5f5f5), to(#f1f1f1));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -moz-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -ms-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: -o-linear-gradient(top, #f5f5f5, #f1f1f1);
+    background-image: linear-gradient(top, #f5f5f5, #f1f1f1);
+    -moz-transition: border-color 0.218s;
+    -o-transition: border-color 0.218s;
+    -webkit-transition: border-color 0.218s;
+    -ms-transition: border-color 0.218s;
+    transition: border-color 0.218s
+}
+
+#BotoneraForm .Default:hover {
+    -moz-transition: border-color 0.218s;
+    -o-transition: border-color 0.218s;
+    -webkit-transition: border-color 0.218s;
+    -ms-transition: border-color 0.218s;
+    transition: border-color 0.218s;
+    -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    border-color: #939393;
+    color: #333
+}
+
+#BotoneraForm .Default:active {
+    border-color: #444444;
+    background: #f5f5f5;
+    background-image: -webkit-gradient(linear, 0% 40%, 0% 70%, from(#f1f1f1), to(#f5f5f5));
+    background-image: -webkit-linear-gradient(top, #f1f1f1, #f5f5f5);
+    background-image: -moz-linear-gradient(top, #f1f1f1, #f5f5f5);
+    background-image: -ms-linear-gradient(top, #f1f1f1, #f5f5f5);
+    background-image: -o-linear-gradient(top, #f1f1f1, #f5f5f5);
+    background-image: linear-gradient(top, #f1f1f1, #f5f5f5)
+}
+
+#BotoneraForm .Grabar {
+    font-size: 11px;
+    color: #fff;
+    border-color: #427ede;
+    background: #4787ed;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4d90fe), to(#4787ed));
+    background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -moz-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -ms-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: -o-linear-gradient(top, #4d90fe, #4787ed);
+    background-image: linear-gradient(top, #4d90fe, #4787ed);
+    -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    margin: 0 3px;
+    padding: 7px 12px;
+    -moz-transition: border-color 0.218s;
+    -o-transition: border-color 0.218s;
+    -webkit-transition: border-color 0.218s;
+    -ms-transition: border-color 0.218s;
+    transition: border-color 0.218s
+}
+
+#BotoneraForm .Grabar:hover {
+    border-color: #2f5bb7;
+    background: #357ae8;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#4d90fe), to(#357ae8));
+    background-image: -webkit-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -moz-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -ms-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: -o-linear-gradient(top, #4d90fe, #357ae8);
+    background-image: linear-gradient(top, #4d90fe, #357ae8);
+    -moz-transition: border-color 0.218s;
+    -o-transition: border-color 0.218s;
+    -webkit-transition: border-color 0.218s;
+    -ms-transition: border-color 0.218s;
+    transition: border-color 0.218s;
+    -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2)
+}
+
+#BotoneraForm .Grabar:active {
+    background: #4d90fe
+}
+
+#BotoneraForm .Eliminar {
+    font-size: 11px;
+    color: #fff;
+    border: 1px solid transparent;
+    background: #d14836;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#dd4b39), to(#d14836));
+    background-image: -webkit-linear-gradient(top, #dd4b39, #d14836);
+    background-image: -moz-linear-gradient(top, #dd4b39, #d14836);
+    background-image: -ms-linear-gradient(top, #dd4b39, #d14836);
+    background-image: -o-linear-gradient(top, #dd4b39, #d14836);
+    background-image: linear-gradient(top, #dd4b39, #d14836);
+    -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    margin: 0 3px;
+    padding: 7px 12px;
+    -moz-transition: border-color 0.218s;
+    -o-transition: border-color 0.218s;
+    -webkit-transition: border-color 0.218s;
+    -ms-transition: border-color 0.218s;
+    transition: border-color 0.218s
+}
+
+#BotoneraForm .Eliminar:hover {
+    border-color: #B0281A;
+    border-bottom: 1px solid #af301f;
+    background: #c53727;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#dd4b39), to(#c53727));
+    background-image: -webkit-linear-gradient(top, #dd4b39, #c53727);
+    background-image: -moz-linear-gradient(top, #dd4b39, #c53727);
+    background-image: -ms-linear-gradient(top, #dd4b39, #c53727);
+    background-image: -o-linear-gradient(top, #dd4b39, #c53727);
+    background-image: linear-gradient(top, #dd4b39, #c53727);
+    -moz-transition: border-color 0.218s;
+    -o-transition: border-color 0.218s;
+    -webkit-transition: border-color 0.218s;
+    -ms-transition: border-color 0.218s;
+    transition: border-color 0.218s;
+    -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2)
+}
+
+#BotoneraForm .Eliminar:active {
+    -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.3)
+}
+
+.timeman-block {
+    text-align: right;
+    cursor: pointer;
+    display: inline-block;
+    height: 63px;
+    text-align: left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+    white-space: nowrap;
+    margin: 0px;
+    padding: 0px;
+    margin-right: 30px
+}
+
+.bx-time {
+    color: #fff;
+    display: inline-block;
+    font-size: 38px;
+    font-family: "OpenSans-Light", sans-serif;
+    height: 63px;
+    line-height: 59px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 5
+}
+
+.time-hours {
+    display: inline-block;
+    height: 63px;
+    vertical-align: top
+}
+
+.time-semicolon {
+    display: inline-block;
+    height: 63px;
+    vertical-align: top
+}
+
+.time-minutes {
+    display: inline-block;
+    height: 63px;
+    vertical-align: top
+}
+
+.time-am-pm {
+    display: inline-block;
+    font-size: 13px;
+    height: 55px;
+    line-height: 44px;
+    margin-left: 0;
+    vertical-align: top
+}
+
+.user {
+    font-size: 11px;
+    margin-top: 0px;
+    padding-top: 0px;
+    color: #FFC;
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    top: 35px
+}
+
+.img {
+    margin: 5px;
+    border-radius: 10% 0;
+    box-shadow: 0px 0px 15px #000;
+    padding: 10px;
+    background: #FFF
+}
+
+#ZonaTitulo {
+    width: 100%;
+    height: 100%;
+    background-image: url(fondo2.jpg);
+    color: #FF6D64;
+    margin-top: 22px;
+    color: #FFF;
+    padding: 5px 5px 5px 15px
+}
+
+#Botones {
+    padding: 10px 10px 10px 10px;
+    width: 100%;
+    height: 100%;
+    background-image: url(bg.png);
+    border: 1px #CCC solid;
+    margin-top: 5px
+}
+
+#btnCerrarVentana {
+    background-image: url(../botones/btnCerrarVen.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_Editar {
+    background-image: url(../botones/btngrillaEditar.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_Elim {
+    background-image: url(../botones/btngrillaEliminar.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 26px;
+    width: 30px
+}
+
+#btnGrid_Asig {
+    background-image: url(../botones/btngrillaAsig.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_Alum {
+    background-image: url(../botones/btngrillaAlum.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_NotasAlum {
+    background-image: url(../botones/btngrillaNotas.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_Atras {
+    background-image: url(../botones/btnatras2.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btn_Grabar {
+    margin-left: 10px;
+    background-image: url(../botones/btngrabar.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 73px;
+    width: 78px
+}
+
+#btn_Modificar {
+    margin-left: 10px;
+    background-image: url(../botones/btnmodificar.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 33px;
+    width: 93px
+}
+
+.btn_Buscar {
+    cursor: pointer;
+    background-image: url(../botones/btnbuscar_b.png);
+    width: 90px;
+    height: 28px
+}
+
+.btn_Buscar:hover {
+    cursor: pointer;
+    background-image: url(../botones/btnbuscar_a.png);
+    width: 90px;
+    height: 28px
+}
+
+.btn_Buscar:active {
+    cursor: pointer;
+    background-image: url(../botones/btnbuscar_a.png);
+    width: 90px;
+    height: 28px
+}
+
+.btnMasPagos {
+    margin-bottom: 10px
+}
+
+#btnGrid_Editar {
+    background-image: url(../botones/btngrillaEditar.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_Elim {
+    background-image: url(../botones/btngrillaEliminar.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_Due {
+    background-image: url(../botones/btngrillaDue.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_Prop {
+    background-image: url(../botones/btngrillaProp.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+#btnGrid_PropPeq {
+    background-image: url(../botones/btngrillaPropPeq.png);
+    display: block;
+    height: 22px;
+    width: 25px
+}
+
+#btnGrid_Arr {
+    background-image: url(../botones/btngrillaArr.png);
+    display: block;
+    height: 35px;
+    width: 40px
+}
+
+.TablaPeq table {
+    border: 1px dashed #F0F0F0
+}
+
+.TablaPeq th {
+    background-color: #333 !important;
+    color: #fff !important;
+    text-align: left !important;
+    padding-left: 5px;
+    border-right: solid 1px #dff0d8;
+    font-size: 12px
+}
+
+.TablaPeq td {
+    border-right: solid 1px #dff0d8;
+    border-bottom: solid 1px #dff0d8;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 12px
+}
+
+.TablaPeq tfoot {
+    border-top: 1px #dff0d8 solid;
+    padding-top: 10px;
+    padding-right: 10px;
+    color: #3c763d;
+    font-size: 11px
+}
+
+.datagrid label {
+    color: #999999
+}
+
+.datagrid table th {
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center
+}
+
+.datagrid table td {
+    font-size: 12px;
+    text-align: center
+}
+
+.datagrid .GridLeft {
+    text-align: left
+}
+
+.datagrid .GridRight {
+    text-align: right
+}
+
+.datagrid #Grillabtn th,
+.datagrid td {
+    text-align: center;
+    width: 5px !important
+}
+
+#ListGrilla_length {
+    border: 1px solid #999999;
+    padding: 5px 10px
+}
+
+
+/*##########################################################
+ FALTA POR AGREGAR AL ARCHIVO .SASS 
+##########################################################*/
+
+/*@import url(ngToast.css);
+@import url(ngToast-animations.css);
+@import url(c3.css);
+.ng-toast.ng-toast--right .ng-toast__message {
+    list-style: none;
+}*/
+
+
+/*  SMART-TABLE  */
+
+.st-sort-ascent:before {
+    content: '\25B2';
+}
+
+.st-sort-descent:before {
+    content: '\25BC';
+}
+
+
+/* fin: SMART-TABLE  */
+
+
+/*
+.alert-success {
+    color: white;
+    background-color: red;
+    border-color: #d6e9c6;
+    -webkit-box-shadow: 13px 10px 16px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 10px 16px -4px rgba(0,0,0,0.75);
+    box-shadow: 13px 10px 16px -4px rgba(0,0,0,0.75);
+}
+
+
+.ng-toast__list ul li {
+  color: black;
+}
+.ng-toast__message{
+  color: red;
+}
+
+.dinamicContentLoading {
+    z-index:100;
+    border : 1px solid #c0c0c0;
+    background:#f0f0f0;
+    padding: 0px 10px 10px 10px;
+    position:fixed;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    opacity:0.7;
+    filter:alpha(opacity=70);
+
+
+*/
+
+
+/**********************************************************************************/
+
+
+/* Fix for Bootstrap 3 with Angular UI Bootstrap */
+
+body {
+    padding: 20px;
+}
+
+.my-class .modal-body {
+    background-color: #eee;
+}
+
+.my-class .modal-footer {
+    margin-top: 0;
+}
+
+.modal {
+    display: block;
+}
+
+
+/* Custom dialog/modal headers */
+
+.dialog-header-error {
+    background-color: #d2322d;
+}
+
+.dialog-header-wait {
+    background-color: #428bca;
+}
+
+.dialog-header-notify {
+    background-color: #eeeeee;
+}
+
+.dialog-header-confirm {
+    background-color: #333333;
+}
+
+.dialog-header-error span,
+.dialog-header-error h4,
+.dialog-header-wait span,
+.dialog-header-wait h4,
+.dialog-header-confirm span,
+.dialog-header-confirm h4 {
+    color: #ffffff;
+}
+
+
+/* Ease Display */
+
+.pad {
+    padding: 25px;
+}
+
+
+/**********************************************************************************/
+
+.nav,
+.pagination,
+.carousel,
+.panel-title a {
+    cursor: pointer;
+}
+
+
+/* REQUERIDO PARA ANGULAR-UI */
+
+.DropSubMenu {
+    list-style: none;
+}
+
+.margin-top60 {
+    margin-top: 60px;
+}
+
+.sectionTop {
+    background-color: green;
+    margin-bottom: 100px;
+}
+
+
+/*#wrapper{
+  padding-top:25px;
+}*/
+
+.InputForm42 {
+    width: 42%;
+    display: inline-block;
+}
+.InputForm84 {
+    width: 84%;
+    display: inline-block;
+}
+.InputForm20 {
+    width: 20%;
+    display: inline-block;
+}
+
+.form-group {
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+.labelForm {
+    font-weight: 0 !important;
+}
+
+.colImgForm {
+    padding: 0px;
+    padding-left: 5px;
+}
+
+.imgForm {
+    border: 4px solid #ccc;
+    margin-right: 15px;
+    width: 163px;
+    height: 163px;
+}
+
+.imgUser {
+    border: 4px solid #ccc;
+    margin-right: 15px;
+    width: 120px;
+    height: 120px;
+}
+
+.txtForm {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    padding-left: 5px;
+}
+
+.alertForm {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.page-wrapperForm {
+    margin-top: 40px;
+    top: 40px;
+    position: relative;
+    width: 98%;
+    margin: 0px 0px 0px 10px !important;
+    border: 1px solid #CCC;
+    /*background-image: url("binn/css/bg.png");
+      background-repeat: repeat-x;*/
+    background-color: #fff;
+    padding: 6px 10px 10px;
+    webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    /*-webkit-box-shadow: 2px 2px 2px 3px rgba(0,0,0,.15);
+      -moz-box-shadow: 2px 2px 2px 3px rgba(0,0,0,.15);
+      box-shadow: 2px 2px 2px 3px rgba(0,0,0,.15);*/
+}
+
+.page-wrapperForm label {
+    font-weight: normal;
+}
+
+.breadcrumb {
+    background-color: #eee;
+    ;
+}
+
+.titulo h2 {
+    color: #666;
+    margin-top: 0px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #999999;
+}
+
+.historico {
+    color: white;
+    font-size: 12px;
+    font-family: 'Open Sans', 'sans-serif';
+    letter-spacing: 1px;
+}
+
+.SinPadding {
+    padding: 0px;
+}
+
+.PanelDsctos {
+    padding-top: 10px;
+}
+
+.ColorRojo {
+    color: #d9534f;
+}
+
+.ColorAzul {
+    color: #207ce5;
+}
+
+.ColorGris {
+    color: #B5B5B5;
+}
+
+.seccionUNO {
+    /*  border-top: 1px solid #;
+  border-bottom: 1px solid #ccc;*/
+    background-image: url("bg6.png");
+    background-repeat: repeat-x;
+    background-color: #fff;
+    padding-top: 5px;
+}
+
+.seccionUNO label {
+    color: #d9534f;
+    font-weight: normal;
+}
+
+.buttonEditar {
+    background: transparent;
+    background-image: url('http://ap.dgca.cl/binn/botones/btngrillaEditar.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 40px;
+    background-position: center top;
+    display: inline;
+    border: none;
+}
+
+.buttonElimina{
+    background: transparent;
+    background-image: url('../botones/btngrillaElim.png');
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 40px;
+    background-position: center top;
+    display: inline;
+    border: none;
+}
+
+.buttonGrilla {
+    border: none;
+}
+
+
+/* TAB *********************************************/
+
+.TabForm {
+    /* margin-top: 10px;
+    margin: 20px; 
+    border: 1px solid;*/
+}
+
+
+
+
+/*  EFECTO IMAGEN FORM *********************************************/
+.hovereffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+.hovereffect .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transform: translate(460px, -100px) rotate(180deg);
+    -ms-transform: translate(460px, -100px) rotate(180deg);
+    transform: translate(460px, -100px) rotate(180deg);
+    -webkit-transition: all 0.2s 0.4s ease-in-out;
+    transition: all 0.2s 0.4s ease-in-out;
+}
+.hovereffect img {
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.hovereffect h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+}
+.hovereffect a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #fff;
+    margin: 50px 0 0 0;
+    background-color: transparent;
+    -webkit-transform: translateY(-200px);
+    -ms-transform: translateY(-200px);
+    transform: translateY(-200px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.hovereffect a.info:hover {
+    box-shadow: 0 0 5px #fff;
+}
+.hovereffect:hover .overlay {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+.hovereffect:hover h2 {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+.hovereffect:hover a.info {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+.exportar ul
+{
+margin-top: -20px;
+padding: -20px 0px;
+list-style-type: none;
+text-align: center;
+}
+/*Solución a los href fallidos en ui.bootstrap  */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

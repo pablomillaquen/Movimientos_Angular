@@ -1,0 +1,52 @@
+<!-- Modal -->
+<!--./HEADER-->
+<div class="modal-header" type="text/ng-template">
+    <button type="button" class="close" ng-click="cerrar()">&times;</button>
+    <h3 class="modal-title">Histórico Operarios</h3>
+</div>
+<!--./BODY-->
+<div class="modal-body">
+    <div class="row">
+        <form id="frmDatos" method="post" class="form-horizontal">
+            <div class="col-xs-10 col-md-10">
+                <table st-table="maquinas" st-safe-src="datosMaquinas" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th st-sort="id">ID</th>
+                            <th st-sort="codigomaq">Código Máquina</th>
+                            <th st-sort="tipo">Tipo</th>
+                            <th st-sort="marca">Marca</th>
+                            <th st-sort="patente">Patente</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="row in maquinas">
+                            <td>{{ row.id }}</td>
+                            <td>{{ row.codigomaq }}</td>
+                            <td>{{ row.tipo | uppercase }}</td>
+                            <td>{{ row.marca | uppercase}}</td>
+                            <td>{{ row.patente | uppercase}}</td>
+                            <td><a class="btn btn-primary" ng-click="selecciona(row)">Selecciona</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="10" class="text-center">
+                                <div st-items-by-page="5" st-pagination="" st-template="binn/app/config/pagination.custom.html"></div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+<!--./FOOTER-->
+<div class="modal-footer">
+    <div class="form-group">
+        <div class="col-md-12">
+            <button class="btn btn-info" ng-click="cerrar()"><i class="glyphicon glyphicon-th-list">  </i> Cancelar</button>
+        </div>
+    </div>
+</div>

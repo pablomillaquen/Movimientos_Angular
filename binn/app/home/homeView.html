@@ -1,0 +1,200 @@
+<menu-dir></menu-dir>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="titulo">
+                <div class="row rowSeparaTop">
+                    <div class="col-xs-8 col-sm-8">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                MÁQUINAS NO UTILIZADAS
+                                <div class="btn-group pull-right" role="group" aria-label="Button group with nested ">
+                                    <a ui-sref="maestro" href="/maestro.maquinas" class="btn btn-danger btn-xs" role="button">VER TODAS LAS MÁQUINAS</a>
+                                    <!-- <a ui-sref="#/maestro/maquinas" class="btn btn-danger btn-xs" role="button">VER TODAS LAS MAQUINAS</a>   -->
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Tipo</th>
+                                            <th>Marca</th>
+                                            <th>Modelo</th>
+                                            <th>Último Uso</th>
+                                            <th>Días sin Uso</th>
+                                        </tr>
+                                        <tbody>
+                                            <tr ng-repeat="row in datosMaquinaSinUso  | orderBy:order | limitTo:cantidad">
+                                                <td scope="row">{{row.idmaq}}</td>
+                                                <td>{{row.tipo}}</td>
+                                                <td>{{row.marca}}</td>
+                                                <td>{{row.modelo}}</td>
+                                                <td>{{row.ultimouso}}</td>
+                                                <td>{{row.diassinuso}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="alert alert-danger alertForm" role="alert"><span class="lead txtForm ColorRojo">Info</span></div> 
+      <div class="panel panel-danger">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+            <br /><br /><br />INFO <br /><br /><br /><br /><br /><br /><br />
+         
+        </div>
+      </div>-->
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Usuario Activo: MANUEL ORTEGA CARCAMO</div>
+                            <div class="panel-body">
+                                <div class="col-md-5 colImgForm">
+                                    <img class="img-responsive img-circle imgUser" src="{{ imgUser  || 'binn/images/user/sinfoto.jpg' }}" alt="">
+                                </div>
+                                <div class="col-md-7">
+                                    <table class="table">
+                                        <caption>Últimos Accesos</caption>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">28-03-2016</th>
+                                                <td>08:00</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">30-03-2016</th>
+                                                <td>13:15</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">30-03-2016</th>
+                                                <td>18:10</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-8">
+                    <!--Inicio Gráficos-->
+                        <div class="col-xs-12">
+                            <div class="panel panel-success" ng-controller="Grafico2Ctrl">
+                                <highchart id="chart1" config="chartConfig" class="span9" ></highchart>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="panel panel-success" ng-controller="Grafico1Ctrl">
+                                <highchart id="chart1" config="chartConfig" class="span9" ></highchart>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="panel panel-success"  ng-controller="Grafico3Ctrl">
+                                <highchart id="chart2" config="chartConfig" class="span9" ></highchart>
+                            </div>
+                        </div>
+                    </div>
+                            <!--div class="panel panel-success">
+                                <h3>Gráfico 1</h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="panel panel-success">
+                                <h3>Gráfico 2</h3>
+                            </div>
+                        </div-->
+                        <!--div class="col-xs-12">
+                            <div class="panel panel-success">
+                                <h3>Gráfico 3</h3>
+                            </div>
+                        </div-->
+                    </div>
+                    <!--Fin Gráficos-->
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <b>MANTENCIONES / REVISIÓN TÉCNICAS</b>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <table class="table">
+                                        <caption>MÁQUINAS PRÓXIMAS A MANTENCIONES <span class="badge">4</span></caption>
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Modelo</th>
+                                            <th>Actual</th>
+                                            <th>Próxima</th>
+                                        </tr>
+                                        <tbody>
+                                            <tr ng-repeat="row in datosMaquinaSinUso  | orderBy:order | limitTo:cantidad">
+                                                <td>{{row.tipo}}</td>
+                                                <td>{{row.modelo}}</td>
+                                                <td>{{row.diassinuso}}</td>
+                                                <td>{{row.diassinuso}}</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <th colspan="4">
+                                                <div class="btn-group pull-right" role="group" aria-label="Button group with nested ">
+                                                    <a ui-sref="maestro" href="/maestro.maquinas" class="btn btn-success btn-xs" role="button">VER TODAS LAS MÁQUINAS</a>
+                                                    <!-- <a ui-sref="#/maestro/maquinas" class="btn btn-danger btn-xs" role="button">VER TODAS LAS MAQUINAS</a>   -->
+                                                </div>
+                                            </th>
+                                        </tfoot>
+                                    </table>
+                                    <table class="table">
+                                        <caption>PRÓXIMAS REVISIONES TÉCNICAS <span class="badge">4</span></caption>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Tipo</th>
+                                            <th>Modelo</th>
+                                            <th>Próx.Rev.Téc.</th>
+                                        </tr>
+                                        <tbody>
+                                            <tr ng-repeat="row in datosMaquinaSinUso  | orderBy:order | limitTo:cantidad">
+                                                <td scope="row">{{row.idmaq}}</td>
+                                                <td>{{row.tipo}}</td>
+                                                <td>{{row.modelo}}</td>
+                                                <td>{{row.ultimouso}}</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <th colspan="4">
+                                                <div class="btn-group pull-right" role="group" aria-label="Button group with nested ">
+                                                    <a ui-sref="maestro" href="/maestro.maquinas" class="btn btn-success btn-xs" role="button">VER TODAS LAS MÁQUINAS</a>
+                                                    <!-- <a ui-sref="#/maestro/maquinas" class="btn btn-danger btn-xs" role="button">VER TODAS LAS MAQUINAS</a>   -->
+                                                </div>
+                                            </th>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="panel panel-success">
+                            <!--  <div class="panel-heading">GRAFICOS</div> -->
+                            <div class="panel-body">GRÁFICOS</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                    </div>
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="alert alert-success alertForm" role="alert"><span class="lead txtForm ColorRojo">Info 2</span></div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <div class="alert alert-success alertForm" role="alert"><span class="lead txtForm ColorRojo">Info 3</span></div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <div class="alert alert-success alertForm" role="alert"><span class="lead txtForm ColorRojo">Info 4</span></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="alert alert-info alertForm" role="alert"><span class="lead txtForm ColorRojo">Info 2</span></div>
+                    </div>
+                </div>
+        </div>
+        </section>
+    </div>
+</div>
+</div>

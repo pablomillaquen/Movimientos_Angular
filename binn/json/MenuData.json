@@ -1,0 +1,121 @@
+[
+	
+	{
+		"id" : "1",
+		"nombre" : "MAESTROS",
+		"padre" : "0",
+		"link" : "#"
+	},
+		{
+			"id" : "11",		
+			"nombre" : "Operadores",
+			"padre" : "1",
+			"link" : "#/maestro/operadores"
+		},
+		{
+			"id" : "12",		
+			"nombre" : "Detalle Operador",
+			"padre" : "1",
+			"link" : "#/maestro/operador"
+		},
+		{
+			"id" : "13",		
+			"nombre" : "Listado Maquinas",
+			"padre" : "1",
+			"link" : "#/maestro/maquinas"
+		},
+		
+		{
+			"id" : "15",		
+			"nombre" : "Marcas",
+			"padre" : "1",
+			"link" : "#/maestro/marcas"
+		},
+		
+		{
+			"id" : "17",		
+			"nombre" : "Obras",
+			"padre" : "1",
+			"link" : "#/maestro/obras"
+		},
+		{
+			"id" : "44",		
+			"nombre" : "VALOR PETROLEO",
+			"padre" : "1",
+			"link" : "#/config/petroleo"
+		},
+		
+	{
+		"id" : "2",		
+		"nombre" : "MOVIMIENTOS",
+		"padre" : "0",
+		"link" : "#"
+	},
+		{
+			"id" : "21",		
+			"nombre" : "Nuevo Movimiento",
+			"padre" : "2",
+			"link" : "#/movimiento/nuevo"
+		},
+		{
+			"id" : "22",		
+			"nombre" : "Listado de Movimientos",
+			"padre" : "2",
+			"link" : "#/movimiento/listado"
+		},
+	{
+		"id" : "3",		
+		"nombre" : "INFORMES",
+		"padre" : "0",
+		"link" : "#"
+	},
+		{
+			"id" : "31",		
+			"nombre" : "Liquidacion por Obra",
+			"padre" : "3",
+			"link" : "#/informe/liquidacionobra"
+		},
+		{
+			"id" : "32",		
+			"nombre" : "Resumen por Obra",
+			"padre" : "3",
+			"link" : "#/informe/resumenobra"
+		},
+		{
+			"id" : "33",		
+			"nombre" : "Resumen Global",
+			"padre" : "3",
+			"link" : "#/informe/global"
+		},
+		{
+			"id" : "34",		
+			"nombre" : "Detalle uso Máquinas",
+			"padre" : "3",
+			"link" : "#/informe/usomaquinas"
+		},
+	{
+		"id" : "4",		
+		"nombre" : "CONFIGURACION",
+		"padre" : "0",
+		"link" : "#"
+	},
+		{
+			"id" : "41",		
+			"nombre" : "Usuarios Activos",
+			"padre" : "4",
+			"link" : "#/config/usuarios"
+		},
+		{
+			"id" : "42",		
+			"nombre" : "Perfiles Usuarios",
+			"padre" : "4",
+			"link" : "#/config/perfiles"
+		},
+		{
+			"id" : "43",		
+			"nombre" : "Parametros",
+			"padre" : "4",
+			"link" : "#/config/parametros"
+		}
+	
+]
